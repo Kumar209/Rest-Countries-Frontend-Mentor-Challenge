@@ -22,7 +22,7 @@ const Country = ({ numberWithCommas, getCountryName }) => {
 
       <div className="container">
         <div className="back">
-          <Link to="/">
+          <Link to="/Rest-Countries-Frontend-Mentor-Challenge">
             <i className="fas fa-arrow-left"></i>Back
           </Link>
         </div>
