@@ -42,68 +42,69 @@ function App() {
   };
 
   return (
-    {/*<Router>*/}
-      <div className="App">
-        <Header />
+    // <Router>
+      <>
+        <div className="App">
+          <Header />
 
-        <Routes>
+          <Routes>
+            <Route
+              exact
+              path="/Rest-Countries-Frontend-Mentor-Challenge"
+              element={
+                <>
+                  <div className="container">
+                    <form onSubmit={handleSubmit}>
+                      <div className="inputField">
+                        <input
+                          type="search"
+                          placeholder="Search for a country..."
+                          value={inputField}
+                          onChange={(e) => {
+                            setInputField(e.target.value);
+                            setSearch(e.target.value);
+                          }}
+                        />
+                        <i className="fas fa-search"></i>
+                      </div>
+                      <select id="region" name="region" onChange={handleSelect}>
+                        <option value="All" defaultValue>
+                          All
+                        </option>
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">America</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                      </select>
+                    </form>
+                  </div>
 
-          <Route
-            exact
-            path="/Rest-Countries-Frontend-Mentor-Challenge"
-            element={
-              <>
-                <div className="container">
-                  <form onSubmit={handleSubmit}>
-                    <div className="inputField">
-                      <input
-                        type="search"
-                        placeholder="Search for a country..."
-                        value={inputField}
-                        onChange={(e) => {
-                          setInputField(e.target.value);
-                          setSearch(e.target.value);
-                        }}
-                      />
-                      <i className="fas fa-search"></i>
-                    </div>
-                    <select id="region" name="region" onChange={handleSelect}>
-                      <option value="All" defaultValue>
-                        All
-                      </option>
-                      <option value="Africa">Africa</option>
-                      <option value="Americas">America</option>
-                      <option value="Asia">Asia</option>
-                      <option value="Europe">Europe</option>
-                      <option value="Oceania">Oceania</option>
-                    </select>
-                  </form>
-                </div>
+                  <Countries
+                    filtra={filtra}
+                    input={search}
+                    numberWithCommas={numberWithCommas}
+                  />
+                </>
+              }
+            />
 
-                <Countries
-                  filtra={filtra}
-                  input={search}
+            {/*eslint-disable-next-line react/no-children-prop */}
+            {/* <Route path="/:countryName" children={<Country numberWithCommas={numberWithCommas} getCountryName={getCountryName}/>} /> */}
+
+            <Route
+              path="/:countryName"
+              element={
+                <Country
                   numberWithCommas={numberWithCommas}
+                  getCountryName={getCountryName}
                 />
-              </>
-            }
-          />
-
-          {/*eslint-disable-next-line react/no-children-prop */}
-          {/* <Route path="/:countryName" children={<Country numberWithCommas={numberWithCommas} getCountryName={getCountryName}/>} /> */}
-
-          <Route
-            path="/:countryName"
-            element={
-              <Country
-                numberWithCommas={numberWithCommas}
-                getCountryName={getCountryName}
-              />
-            }
-          />
-        </Routes>
-      </div>
-   {/* </Router>*/}
+              }
+            />
+          </Routes>
+        </div>
+      </>
+    {/* </Router> */}
   );
 }
 
