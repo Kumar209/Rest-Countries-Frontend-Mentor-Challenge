@@ -2,7 +2,7 @@ import Header from "./Header";
 import { useState } from "react";
 import Countries from "./Countries";
 import Country from "./Country";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import useFetch from "./useFetch";
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <Router>
+    {/*<Router>*/}
       <div className="App">
         <Header />
 
@@ -103,7 +103,7 @@ function App() {
           />
         </Routes>
       </div>
-    </Router>
+   {/* </Router>*/}
   );
 }
 
