@@ -93,7 +93,7 @@ function App() {
           {/* <Route path="/:countryName" children={<Country numberWithCommas={numberWithCommas} getCountryName={getCountryName}/>} /> */}
 
           <Route
-            path="/Rest-Countries-Frontend-Mentor-Challenge/:countryName"
+            path="/:countryName"
             element={
               <Country
                 numberWithCommas={numberWithCommas}
