@@ -47,6 +47,7 @@ function App() {
         <Header />
 
         <Routes>
+
           <Route
             exact
             path="/Rest-Countries-Frontend-Mentor-Challenge"
@@ -92,7 +93,7 @@ function App() {
           {/* <Route path="/:countryName" children={<Country numberWithCommas={numberWithCommas} getCountryName={getCountryName}/>} /> */}
 
           <Route
-            path="/:countryName"
+            path="/Rest-Countries-Frontend-Mentor-Challenge/:countryName"
             element={
               <Country
                 numberWithCommas={numberWithCommas}
